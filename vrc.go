@@ -9,9 +9,16 @@ import (
     "net/url"
 )
 
+type remoteUpstream struct {
+    endpoint string
+    authType string
+    creds []string
+}
+
+var remoteUpstreams []remoteUpstream
+
 var modifyResponseEnabled = false
 var localUpstream = "http://172.17.0.2:8200"
-var remoteUpstreams = []
 
 // NewProxy takes target host and creates a reverse proxy
 func NewProxy(targetHost string) (*httputil.ReverseProxy, error) {
