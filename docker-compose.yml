@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+
+  vault-a:
+    image: hashicorp/vault:1.15.1
+    container_name: vault-a
+    network_mode: bridge
+
+  vault-b:
+    image: hashicorp/vault:1.15.1
+    container_name: vault-b
+    network_mode: bridge
+
+#  repl-cont-a:
+#    image: nginx:alpine
+#
+#  repl-cont-b:
+#    image: nginx:alpine
+
